@@ -12,6 +12,11 @@
 		749939851ED5ECC000185A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749939831ED5ECC000185A3A /* Main.storyboard */; };
 		749939871ED5ECC000185A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749939861ED5ECC000185A3A /* Assets.xcassets */; };
 		7499398A1ED5ECC000185A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749939881ED5ECC000185A3A /* LaunchScreen.storyboard */; };
+		74F63ED41ED7350D0093985B /* UdacityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ECE1ED7350D0093985B /* UdacityManager.swift */; };
+		74F63ED51ED7350D0093985B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ECF1ED7350D0093985B /* ApiManager.swift */; };
+		74F63ED61ED7350D0093985B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ED01ED7350D0093985B /* LoginVC.swift */; };
+		74F63ED71ED7350D0093985B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ED11ED7350D0093985B /* User.swift */; };
+		74F63ED81ED7350D0093985B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F63ED21ED7350D0093985B /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		749939861ED5ECC000185A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		749939891ED5ECC000185A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7499398B1ED5ECC000185A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74F63ECE1ED7350D0093985B /* UdacityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityManager.swift; sourceTree = "<group>"; };
+		74F63ECF1ED7350D0093985B /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		74F63ED01ED7350D0093985B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		74F63ED11ED7350D0093985B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74F63ED21ED7350D0093985B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +64,15 @@
 		7499397E1ED5ECC000185A3A /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				74F63ECE1ED7350D0093985B /* UdacityManager.swift */,
+				74F63ECF1ED7350D0093985B /* ApiManager.swift */,
+				74F63ED01ED7350D0093985B /* LoginVC.swift */,
+				74F63ED11ED7350D0093985B /* User.swift */,
 				7499397F1ED5ECC000185A3A /* AppDelegate.swift */,
 				749939811ED5ECC000185A3A /* ViewController.swift */,
 				749939831ED5ECC000185A3A /* Main.storyboard */,
 				749939861ED5ECC000185A3A /* Assets.xcassets */,
+				74F63ED21ED7350D0093985B /* Login.storyboard */,
 				749939881ED5ECC000185A3A /* LaunchScreen.storyboard */,
 				7499398B1ED5ECC000185A3A /* Info.plist */,
 			);
@@ -124,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F63ED81ED7350D0093985B /* Login.storyboard in Resources */,
 				7499398A1ED5ECC000185A3A /* LaunchScreen.storyboard in Resources */,
 				749939871ED5ECC000185A3A /* Assets.xcassets in Resources */,
 				749939851ED5ECC000185A3A /* Main.storyboard in Resources */,
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F63ED51ED7350D0093985B /* ApiManager.swift in Sources */,
+				74F63ED41ED7350D0093985B /* UdacityManager.swift in Sources */,
+				74F63ED71ED7350D0093985B /* User.swift in Sources */,
 				749939821ED5ECC000185A3A /* ViewController.swift in Sources */,
 				749939801ED5ECC000185A3A /* AppDelegate.swift in Sources */,
+				74F63ED61ED7350D0093985B /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,7 @@
 				749939901ED5ECC000185A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

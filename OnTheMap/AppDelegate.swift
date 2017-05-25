@@ -2,11 +2,17 @@
 //  AppDelegate.swift
 //  OnTheMap
 //
-//  Created by Daniel Legler on 5/24/17.
+//  Created by Daniel Legler on 4/8/17.
 //  Copyright © 2017 Daniel Legler. All rights reserved.
 //
 
 import UIKit
+
+/*
+Parse Application ID: QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr
+REST API Key: QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY
+*/
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
