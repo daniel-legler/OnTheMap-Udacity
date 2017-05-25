@@ -14,7 +14,8 @@ class UdacityManager: ApiManager {
     
     private override init(){}
     static let standard = UdacityManager()
-    var x: String!
+
+    
     func ApiRequest(_ request: NSMutableURLRequest, _ completion: @escaping (_ json: [String:Any]?, _ error: String?) -> ()) {
         
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
@@ -61,7 +62,7 @@ class UdacityManager: ApiManager {
                 return
             }
             
-            // Parse JSON
+            // Save User ID and Session ID
             
             
             completion(nil)
