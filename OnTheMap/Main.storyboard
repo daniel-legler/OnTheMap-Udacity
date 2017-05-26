@@ -40,7 +40,7 @@
         <!--On The Map-->
         <scene sceneID="vpx-Li-UKz">
             <objects>
-                <viewController id="ynL-je-4gh" sceneMemberID="viewController">
+                <viewController id="ynL-je-4gh" customClass="MapVC" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6h8-AH-dgo"/>
                         <viewControllerLayoutGuide type="bottom" id="F1M-nw-aOV"/>

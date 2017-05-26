@@ -19,15 +19,20 @@ class LoginVC: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        self.performSegue(withIdentifier: "Main", sender: nil)
+    }
     
     @IBAction func loginButtonPress(_ sender: Any) {
         
-        guard let email = emailField.text, let password = pwField.text, email != "", password != "" else {
-            alert(title: "Error", message: "Enter a valid email/password combination.")
-            return
-        }
+//        guard let email = emailField.text, let password = pwField.text, email != "", password != "" else {
+//            alert(title: "Error", message: "Enter a valid email/password combination.")
+//            return
+//        }
         
-        UM.standard.UdacityLogin(email: email, password: password) { (errorResponse) in
+//        UM.standard.UdacityLogin(email: email, password: password) { (errorResponse) in
+        UM.standard.UdacityLogin(email: "daniellegler@gmail.com", password: "dl83193") { (errorResponse) in
             guard errorResponse == nil else {
                 self.alert(title: "Error", message: errorResponse!)
                 return

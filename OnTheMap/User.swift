@@ -10,11 +10,19 @@ import Foundation
 
 class User {
     
-    var sessionID: String!
-    var accountKey: String!
+    var id: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
     
-    var firstName: String!
-    var lastName: String!
+    var fullName: String {
+        return firstName + " " + lastName
+    }
+    
+    init(id: String, first: String, last: String) {
+        self.id = id
+        self.firstName = first
+        self.lastName = last
+    }
     
     
 }
