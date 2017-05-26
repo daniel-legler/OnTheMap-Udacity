@@ -16,6 +16,8 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshStudents()
+        
         UM.standard.GetUdacityUser { (user, error) in
             guard error == nil else {
                 self.alert(title: "Error", message: error!)
@@ -27,6 +29,22 @@ class MapVC: UIViewController {
             }
             
         }
+    }
+    
+    func refreshStudents() {
+        // Loading
+        PM.standard.loadRecentStudents { (error) in
+            guard error == nil else {
+                // Done Loading
+                self.alert(title: "Error", message: error!)
+                return
+            }
+            
+            // Done Loading
+        }
+        
+        // refreshMap()
+        
     }
 
     

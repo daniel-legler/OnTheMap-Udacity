@@ -24,7 +24,7 @@ struct Student {
     }
 
     
-    init(dictionary: [String : AnyObject]) {
+    init(dictionary: [String : Any]) {
         firstName = dictionary["firstName"] as! String!
         lastName = dictionary["lastName"] as! String!
         longitude = dictionary["longitude"] as! Double

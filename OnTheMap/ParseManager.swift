@@ -12,15 +12,13 @@ import Foundation
 typealias PM = ParseManager
 
 class ParseManager: ApiManager {
+    
+    var students = [Student]()
  
     private override init(){}
     static let standard = ParseManager()
-
     
-    
-    
-    
-    func getRecentStudents() {
+    func loadRecentStudents(_ completion: @escaping (_ error: String?) -> ()) {
         
         let request = NSMutableURLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation?limit=100")!)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
@@ -29,16 +27,22 @@ class ParseManager: ApiManager {
         
         ApiRequest(request) { (data, error) in
             guard error == nil else {
+                completion(error!)
                 print(error!)
                 return
             }
             
+            guard let data = data as? [String:Any] else { return }
+            guard let results = data["results"] as? [[String:Any]] else { return }
             
-
-
+            self.students = []
+            for student in results {
+                if student.count != 10 { continue }
+                self.students.append(Student(dictionary: student))
+            }
+            
+            completion(nil)
+            
         }
-        
-        
     }
-    
 }
