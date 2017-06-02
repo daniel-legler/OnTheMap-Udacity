@@ -35,10 +35,10 @@ class ParseManager: ApiManager {
             guard let data = data as? [String:Any] else { return }
             guard let results = data["results"] as? [[String:Any]] else { return }
             
-            self.students = []
+            PM.standard.students = []
             for student in results {
                 if student.count != 10 { continue }
-                self.students.append(Student(dictionary: student))
+                PM.standard.students.append(Student(dictionary: student))
             }
             
             completion(nil)

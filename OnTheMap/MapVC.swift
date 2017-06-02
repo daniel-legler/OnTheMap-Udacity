@@ -9,15 +9,16 @@
 import UIKit
 import MapKit
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, MKMapViewDelegate {
 
     var activeUser: User!
-    
+    @IBOutlet weak var mapView: MKMapView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshStudents()
-        
+        mapView.delegate = self
+                
         UM.standard.GetUdacityUser { (user, error) in
             guard error == nil else {
                 self.alert(title: "Error", message: error!)
@@ -31,21 +32,28 @@ class MapVC: UIViewController {
         }
     }
     
-    func refreshStudents() {
-        // Loading
-        PM.standard.loadRecentStudents { (error) in
-            guard error == nil else {
-                // Done Loading
-                self.alert(title: "Error", message: error!)
-                return
-            }
+    func refreshMap() {
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        var annotations = [MKPointAnnotation]()
+        
+        for student in PM.standard.students {
             
-            // Done Loading
+            let lat = CLLocationDegrees(student.latitude)
+            let long = CLLocationDegrees(student.longitude)
+
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            annotation.title = student.fullName
+            annotation.subtitle = student.mediaUrl
+            
+            annotations.append(annotation)
         }
         
-        // refreshMap()
-        
+        self.mapView.addAnnotations(annotations)
     }
-
+    
+    
     
 }

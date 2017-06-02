@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ydp-9t-2Dr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ydp-9t-2Dr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +15,7 @@
         <!--List-->
         <scene sceneID="uhR-tS-DJ1">
             <objects>
-                <viewController id="rhb-Ua-Hrk" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rhb-Ua-Hrk" customClass="ListVC" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGa-nr-CKE"/>
                         <viewControllerLayoutGuide type="bottom" id="c9F-wN-Q2f"/>
@@ -21,14 +23,96 @@
                     <view key="view" contentMode="scaleToFill" id="OdM-lB-lA7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f9y-LF-GbR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="52" id="8hU-Gd-8uk" customClass="StudentCell" customModule="OnTheMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hU-Gd-8uk" id="pPD-Ox-LUG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="plm-OG-btt">
+                                                    <rect key="frame" x="16" y="8" width="35.5" height="35.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="plm-OG-btt" secondAttribute="height" multiplier="1:1" id="xiV-X4-Gpl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAd-HZ-Gr0">
+                                                    <rect key="frame" x="67.5" y="15" width="283.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="plm-OG-btt" secondAttribute="bottom" constant="8" id="2vk-ix-DBM"/>
+                                                <constraint firstItem="plm-OG-btt" firstAttribute="leading" secondItem="pPD-Ox-LUG" secondAttribute="leading" constant="16" id="4hH-Bl-GNg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NAd-HZ-Gr0" secondAttribute="trailing" constant="16" id="dBQ-IW-8L8"/>
+                                                <constraint firstItem="NAd-HZ-Gr0" firstAttribute="leading" secondItem="plm-OG-btt" secondAttribute="trailing" constant="16" id="ffD-9Q-rjZ"/>
+                                                <constraint firstItem="NAd-HZ-Gr0" firstAttribute="centerY" secondItem="pPD-Ox-LUG" secondAttribute="centerY" id="ooC-Kf-nHc"/>
+                                                <constraint firstItem="plm-OG-btt" firstAttribute="top" secondItem="pPD-Ox-LUG" secondAttribute="top" constant="8" id="tB6-3A-YS0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="NAd-HZ-Gr0" id="lIo-3x-Boq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rhb-Ua-Hrk" id="KLj-M5-gun"/>
+                                    <outlet property="delegate" destination="rhb-Ua-Hrk" id="ZVm-Gh-EBZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f9y-LF-GbR" firstAttribute="leading" secondItem="OdM-lB-lA7" secondAttribute="leading" id="Bzv-yj-PNl"/>
+                            <constraint firstItem="f9y-LF-GbR" firstAttribute="top" secondItem="wGa-nr-CKE" secondAttribute="bottom" id="WPF-nD-wQv"/>
+                            <constraint firstAttribute="trailing" secondItem="f9y-LF-GbR" secondAttribute="trailing" id="fIK-hq-hih"/>
+                            <constraint firstItem="c9F-wN-Q2f" firstAttribute="top" secondItem="f9y-LF-GbR" secondAttribute="bottom" id="no4-QC-9x9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-selected" id="ud1-bK-fzn"/>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="table" destination="f9y-LF-GbR" id="l8E-zD-oMu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88j-5a-rJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="439"/>
+            <point key="canvasLocation" x="821.60000000000002" y="438.53073463268368"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="EXQ-oj-6zo">
+            <objects>
+                <tableViewController id="WLr-K9-KOZ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="qVB-6U-Fad">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="51" id="acx-hw-8Uz">
+                                <rect key="frame" x="0.0" y="28" width="375" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acx-hw-8Uz" id="Ngp-Gc-saB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WLr-K9-KOZ" id="XAH-2S-Zwh"/>
+                            <outlet property="delegate" destination="WLr-K9-KOZ" id="dAc-6a-Wuc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xV8-I2-F5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482.4000000000001" y="436.73163418290858"/>
         </scene>
         <!--Map-->
         <scene sceneID="vpx-Li-UKz">
@@ -55,6 +139,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-selected" id="qeM-80-x5S"/>
+                    <connections>
+                        <outlet property="mapView" destination="QjU-gP-BMn" id="2G2-bB-zJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97I-R6-lhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,11 +150,15 @@
         <!--On The Map-->
         <scene sceneID="edg-Ya-SAC">
             <objects>
-                <tabBarController id="E89-ML-f3A" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="E89-ML-f3A" customClass="TabVC" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="On The Map" id="6Tl-gz-TBK">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="P8N-rt-F0I"/>
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_refresh" id="ti0-SN-77g"/>
+                            <barButtonItem image="icon_refresh" id="ti0-SN-77g">
+                                <connections>
+                                    <action selector="refreshButton:" destination="E89-ML-f3A" id="aE5-IV-FbB"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="icon_pin" id="wXU-RB-OMk"/>
                         </rightBarButtonItems>
                     </navigationItem>
