@@ -37,8 +37,16 @@ class ParseManager: ApiManager {
             
             PM.standard.students = []
             for student in results {
+                
                 if student.count != 10 { continue }
-                PM.standard.students.append(Student(dictionary: student))
+                
+                let studentObj = Student(dictionary: student)
+                
+                if studentObj.fullName.trimmingCharacters(in: CharacterSet.whitespaces) != "" {
+                    
+                    PM.standard.students.append(studentObj)
+                    
+                }
             }
             
             completion(nil)
