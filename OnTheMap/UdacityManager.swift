@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  UdacityManager.swift
 //  OnTheMap
 //
 //  Created by Daniel Legler on 5/12/17.

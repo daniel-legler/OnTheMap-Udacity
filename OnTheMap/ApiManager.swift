@@ -4,20 +4,10 @@
 //
 //  Created by Daniel Legler on 5/24/17.
 //  Copyright © 2017 Daniel Legler. All rights reserved.
-//
+
 
 import Foundation
-
-
-//
-//  NetworkManager.swift
-//  OnTheMap
-//
-//  Created by Daniel Legler on 5/12/17.
-//  Copyright © 2017 Daniel Legler. All rights reserved.
-//
-
-import Foundation
+import UIKit
 
 typealias AM = ApiManager
 
@@ -64,8 +54,6 @@ class ApiManager: NSObject {
             do {
                 if let json = (try JSONSerialization.jsonObject(with: newData!, options: .allowFragments)) as? [String:Any] {
                     
-//                    print(json)
-                    
                     if let errorResponse = json["error"] as? String {
                         completion(nil, errorResponse)
                     } else {
@@ -84,6 +72,6 @@ class ApiManager: NSObject {
         return data
     }
     
-    
+
  
 }

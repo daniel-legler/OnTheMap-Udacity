@@ -6,7 +6,7 @@
 //  Copyright © 2017 Daniel Legler. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 typealias PM = ParseManager
@@ -52,5 +52,15 @@ class ParseManager: ApiManager {
             completion(nil)
             
         }
+    }
+    
+    func openURL(url: URL) {
+        
+        let app = UIApplication.shared
+        
+        if app.canOpenURL(url) {
+            app.open(url, options: [:], completionHandler: nil)
+        }
+        
     }
 }

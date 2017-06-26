@@ -28,5 +28,23 @@ class ListVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StudentCell
         cell.label.text = student.fullName
         return cell
+        
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let student = PM.standard.students[indexPath.row]
+        
+        let link = student.mediaUrl
+        
+        if let url = URL(string: link) {
+            PM.standard.openURL(url: url)
+        } else {
+            alert(title: "Error", message: "No link found")
+        }
+        
+    }
+    
+  
 }
+

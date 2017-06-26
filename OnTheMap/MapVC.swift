@@ -54,6 +54,46 @@ class MapVC: UIViewController, MKMapViewDelegate {
         self.mapView.addAnnotations(annotations)
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var pin = mapView.dequeueReusableAnnotationView(withIdentifier: "Pin") as? MKPinAnnotationView
+        
+        guard pin != nil else {
+            
+            pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+            
+            pin!.canShowCallout = true
+            
+            pin!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
+            return pin
+        }
+        
+        pin!.annotation = annotation
+        
+        return pin
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        if control == view.rightCalloutAccessoryView {
+            
+            guard let url = view.annotation?.subtitle?! else {
+                alert(title: "Error", message: "No link found")
+                return
+            }
+            
+            if let url = URL(string: url) {
+                
+                PM.standard.openURL(url: url)
+                
+            } else {
+                
+                alert(title: "Error", message: "No link found")
+                
+            }
+        }
+    }
     
     
 }
