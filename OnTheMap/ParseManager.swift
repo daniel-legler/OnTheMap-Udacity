@@ -59,7 +59,9 @@ class ParseManager: ApiManager {
         let app = UIApplication.shared
         
         if app.canOpenURL(url) {
-            app.open(url, options: [:], completionHandler: nil)
+            app.open(url, options: [ : ], completionHandler: { (success) in
+                // TODO Handle error
+            })
         }
         
     }

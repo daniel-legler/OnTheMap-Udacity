@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
 
     }
     
@@ -31,6 +32,9 @@ class LoginVC: UIViewController {
 //            return
 //        }
         
+        
+        Loading.shared.show(view)
+        
 //        UM.standard.UdacityLogin(email: email, password: password) { (errorResponse) in
         UM.standard.UdacityLogin(email: "daniellegler@gmail.com", password: "dl83193") { (errorResponse) in
             guard errorResponse == nil else {
@@ -39,6 +43,7 @@ class LoginVC: UIViewController {
             }
             
             DispatchQueue.main.async {
+                Loading.shared.hide()
                 self.performSegue(withIdentifier: "Main", sender: nil)
             }
 

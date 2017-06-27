@@ -18,6 +18,7 @@ class TabVC: UITabBarController {
     }
     
     @IBAction func refreshButton(_ sender: Any) {
+        Loading.shared.show(view)
         self.refreshStudents()
     }
 
@@ -35,6 +36,8 @@ class TabVC: UITabBarController {
                 
                 (self.viewControllers![0] as! MapVC).refreshMap()
                 (self.viewControllers![1] as! ListVC).refreshList()
+                
+                Loading.shared.hide()
                 
             }
 
