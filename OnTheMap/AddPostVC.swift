@@ -33,7 +33,7 @@ class AddPostVC: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func findOnTheMap(_ sender: Any) {
@@ -93,18 +93,20 @@ class AddPostVC: UIViewController {
     
     @IBAction func submitButtonPressed(_ sender: Any) {
         
+        Loading.shared.show(self.view)
+        
         guard mediaTextField.text != nil, mediaTextField.text != "" else {
             self.alert(title: "Error", message: "Please enter a link to share your study spot")
             return
         }
         
-        Loading.shared.show(view)
-        
         UM.standard.GetUdacityUser { (user, error) in
             
             guard error == nil else {
-                Loading.shared.hide()
-                self.alert(title: "Error", message: error!)
+                DispatchQueue.main.async {
+                    Loading.shared.hide()
+                    self.alert(title: "Error", message: error!)
+                }
                 return
             }
             
@@ -117,13 +119,19 @@ class AddPostVC: UIViewController {
                                    "objectId": "",
                                    "uniqueKey": user!.id])
                 
-            PM.standard.postStudent(student) { (result) in
-//            print(result)
+            PM.standard.postStudent(student) { (error) in
+
+                guard error == nil else {
+                    self.alert(title: "Error", message: error!)
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: {
+                        Loading.shared.hide()
+                    })
+                }
             }
-
         }
-        
-        
     }
-
 }

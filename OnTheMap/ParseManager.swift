@@ -89,12 +89,11 @@ class ParseManager: ApiManager {
         
         ApiRequest(request) { (result, error) in
             guard error == nil else {
-                print(error)
                 completion(error!)
                 return
             }
             
-            print(result!)
+            completion(nil)
         }
         
     }
