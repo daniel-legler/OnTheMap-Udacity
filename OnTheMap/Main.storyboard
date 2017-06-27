@@ -151,6 +151,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="findOnTheMap:" destination="o1b-VN-ggv" eventType="touchUpInside" id="TI5-bH-ZAX"/>
+                                    <action selector="submitButtonPressed:" destination="o1b-VN-ggv" eventType="touchUpInside" id="UWN-qD-BRW"/>
                                 </connections>
                             </button>
                         </subviews>

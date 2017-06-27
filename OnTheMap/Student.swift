@@ -34,4 +34,6 @@ struct Student {
         objectId = dictionary["objectId"] as! String!
         uniqueKey = dictionary["uniqueKey"] as! String!
     }
+    
+  
 }

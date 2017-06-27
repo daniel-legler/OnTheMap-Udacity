@@ -23,7 +23,7 @@ class ApiManager: NSObject {
     var session: URLSession { return URLSession.shared }
 
     func ApiRequest(_ request: NSMutableURLRequest, _ completion: @escaping (_ result: Any?, _ error: String?) -> ()) {
-        
+
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard error == nil else {
