@@ -94,7 +94,6 @@
 		74387EC21ED73BB600A8D865 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7499397F1ED5ECC000185A3A /* AppDelegate.swift */,
 				74F63ECF1ED7350D0093985B /* ApiManager.swift */,
 				74F63ECE1ED7350D0093985B /* UdacityManager.swift */,
 				74387EC61ED7AB8800A8D865 /* ParseManager.swift */,
@@ -110,6 +109,7 @@
 				74387EBB1ED735B700A8D865 /* LaunchScreen.storyboard */,
 				74F63ED21ED7350D0093985B /* Login.storyboard */,
 				74387EBD1ED735C400A8D865 /* Main.storyboard */,
+				7499397F1ED5ECC000185A3A /* AppDelegate.swift */,
 				744E3E001F01EC5500240653 /* UIViewControllerExtensions.swift */,
 			);
 			name = Resources;

@@ -15,7 +15,7 @@ class ListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PM.standard.students.count
+        return StoredStudents.shared.students.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,7 +24,7 @@ class ListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let student = PM.standard.students[indexPath.row]
+        let student = StoredStudents.shared.students[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StudentCell
         cell.label.text = student.fullName
         return cell
@@ -33,7 +33,7 @@ class ListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let student = PM.standard.students[indexPath.row]
+        let student = StoredStudents.shared.students[indexPath.row]
         
         let link = student.mediaUrl
         

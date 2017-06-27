@@ -35,5 +35,12 @@ struct Student {
         uniqueKey = dictionary["uniqueKey"] as! String!
     }
     
-  
+}
+
+class StoredStudents {
+    
+    var students = [Student]()
+
+    static let shared = StoredStudents()
+    
 }

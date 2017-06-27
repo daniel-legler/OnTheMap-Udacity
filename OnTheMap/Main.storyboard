@@ -242,7 +242,7 @@
                             </barButtonItem>
                             <barButtonItem image="icon_pin" id="wXU-RB-OMk">
                                 <connections>
-                                    <segue destination="o1b-VN-ggv" kind="presentation" identifier="AddPost" id="n36-8S-whb"/>
+                                    <action selector="addPost:" destination="E89-ML-f3A" id="5yJ-VO-0ch"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -255,6 +255,7 @@
                     <connections>
                         <segue destination="ynL-je-4gh" kind="relationship" relationship="viewControllers" id="PIG-g7-eVd"/>
                         <segue destination="WLr-K9-KOZ" kind="relationship" relationship="viewControllers" id="9Uv-XM-a3X"/>
+                        <segue destination="o1b-VN-ggv" kind="presentation" identifier="AddPost" id="Anf-EV-UAN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2v-s4-PVV" userLabel="First Responder" sceneMemberID="firstResponder"/>

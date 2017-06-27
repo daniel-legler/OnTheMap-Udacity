@@ -38,7 +38,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         var annotations = [MKPointAnnotation]()
         
-        for student in PM.standard.students {
+        for student in StoredStudents.shared.students {
             
             let lat = CLLocationDegrees(student.latitude)
             let long = CLLocationDegrees(student.longitude)

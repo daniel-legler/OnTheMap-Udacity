@@ -30,6 +30,10 @@ class TabVC: UITabBarController {
         Loading.shared.show(view)
         self.refreshStudents()
     }
+    
+    @IBAction func addPost(_ sender: Any) {
+        performSegue(withIdentifier: "AddPost", sender: nil)
+    }
 
     func refreshStudents() {
         // Loading
@@ -40,7 +44,7 @@ class TabVC: UITabBarController {
                 return
             }
             
-//          PM.standard.students is now updated
+//          StoredStudents.shared.students is now updated
             DispatchQueue.main.async {
                 
                 (self.viewControllers![0] as! MapVC).refreshMap()

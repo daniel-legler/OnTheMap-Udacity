@@ -17,10 +17,10 @@ typealias PM = ParseManager
 
 class ParseManager: ApiManager {
     
-    var students = [Student]()
- 
     private override init(){}
+    
     static let standard = ParseManager()
+    
     private let apiURL = "https://parse.udacity.com/parse/classes/"
     
     func prepareRequestWith(urlParameterString: String) -> NSMutableURLRequest {
@@ -35,7 +35,7 @@ class ParseManager: ApiManager {
     
     func loadRecentStudents(_ completion: @escaping (_ error: String?) -> ()) {
         
-        let request = prepareRequestWith(urlParameterString: "StudentLocation?limit=100")
+        let request = prepareRequestWith(urlParameterString: "StudentLocation?limit=100&order=-updatedAt")
         
         ApiRequest(request) { (data, error) in
             guard error == nil else {
@@ -47,7 +47,7 @@ class ParseManager: ApiManager {
             guard let data = data as? [String:Any] else { return }
             guard let results = data["results"] as? [[String:Any]] else { return }
             
-            PM.standard.students = []
+            StoredStudents.shared.students = []
             for student in results {
                 
                 if student.count != 10 { continue }
@@ -56,7 +56,7 @@ class ParseManager: ApiManager {
                 
                 if studentObj.fullName.trimmingCharacters(in: CharacterSet.whitespaces) != "" {
                     
-                    PM.standard.students.append(studentObj)
+                    StoredStudents.shared.students.append(studentObj)
                     
                 }
             }
