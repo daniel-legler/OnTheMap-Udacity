@@ -21,7 +21,7 @@ class UdacityManager: ApiManager {
     func UdacityLogin(email: String, password: String, completion: @escaping (_ error: String?)->()) {
         
         let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
-        request.httpMethod = "POST"
+        request.httpMethod = Method.Post.rawValue.uppercased()
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = "{\"udacity\": {\"username\": \"\(email)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
@@ -50,7 +50,7 @@ class UdacityManager: ApiManager {
     func UdacityLogout() {
         
         let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
-        request.httpMethod = "DELETE"
+        request.httpMethod = Method.Delete.rawValue.uppercased()
         var xsrfCookie: HTTPCookie? = nil
         let sharedCookieStorage = HTTPCookieStorage.shared
         for cookie in sharedCookieStorage.cookies! {
@@ -65,7 +65,7 @@ class UdacityManager: ApiManager {
                 return
             }
             let range = Range(5..<data!.count)
-            let newData = data?.subdata(in: range) /* subset response data! */
+            let newData = data?.subdata(in: range)
             print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
         }
         task.resume()

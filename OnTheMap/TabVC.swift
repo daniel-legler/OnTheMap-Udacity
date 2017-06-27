@@ -17,6 +17,15 @@ class TabVC: UITabBarController {
         
     }
     
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        UM.standard.UdacityLogout()
+        
+        let loginScreen = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login")
+        self.present(loginScreen, animated: false, completion: nil)
+        
+    }
+    
     @IBAction func refreshButton(_ sender: Any) {
         Loading.shared.show(view)
         self.refreshStudents()
@@ -40,11 +49,6 @@ class TabVC: UITabBarController {
                 Loading.shared.hide()
                 
             }
-
-
         }
-        
     }
-
-
 }

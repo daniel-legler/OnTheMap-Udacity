@@ -229,7 +229,11 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="E89-ML-f3A" customClass="TabVC" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="On The Map" id="6Tl-gz-TBK">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="P8N-rt-F0I"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="P8N-rt-F0I">
+                            <connections>
+                                <action selector="logoutButton:" destination="E89-ML-f3A" id="f18-rg-77c"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_refresh" id="ti0-SN-77g">
                                 <connections>
