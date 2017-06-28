@@ -21,8 +21,7 @@ class TabVC: UITabBarController {
         
         UM.standard.UdacityLogout()
         
-        let loginScreen = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login")
-        self.present(loginScreen, animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
