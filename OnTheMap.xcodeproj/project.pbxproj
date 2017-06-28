@@ -24,7 +24,6 @@
 		74F63ED51ED7350D0093985B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ECF1ED7350D0093985B /* ApiManager.swift */; };
 		74F63ED61ED7350D0093985B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ED01ED7350D0093985B /* LoginVC.swift */; };
 		74F63ED71ED7350D0093985B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F63ED11ED7350D0093985B /* User.swift */; };
-		74F63ED81ED7350D0093985B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F63ED21ED7350D0093985B /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		74F63ECF1ED7350D0093985B /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		74F63ED01ED7350D0093985B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		74F63ED11ED7350D0093985B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		74F63ED21ED7350D0093985B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				7499398B1ED5ECC000185A3A /* Info.plist */,
 				749939861ED5ECC000185A3A /* Assets.xcassets */,
 				74387EBB1ED735B700A8D865 /* LaunchScreen.storyboard */,
-				74F63ED21ED7350D0093985B /* Login.storyboard */,
 				74387EBD1ED735C400A8D865 /* Main.storyboard */,
 				7499397F1ED5ECC000185A3A /* AppDelegate.swift */,
 				744E3E001F01EC5500240653 /* UIViewControllerExtensions.swift */,
@@ -204,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74387EBC1ED735B700A8D865 /* LaunchScreen.storyboard in Resources */,
-				74F63ED81ED7350D0093985B /* Login.storyboard in Resources */,
 				749939871ED5ECC000185A3A /* Assets.xcassets in Resources */,
 				74387EBE1ED735C400A8D865 /* Main.storyboard in Resources */,
 			);
@@ -335,9 +331,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				DEVELOPMENT_TEAM = NZ4TW8FFF3;
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Legler.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -349,9 +347,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				DEVELOPMENT_TEAM = NZ4TW8FFF3;
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Legler.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

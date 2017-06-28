@@ -37,7 +37,7 @@ class LoginVC: UIViewController {
             
             DispatchQueue.main.async {
                 Loading.shared.hide()
-                self.performSegue(withIdentifier: "Main", sender: nil)
+                self.performSegue(withIdentifier: "Tab", sender: nil)
             }
         }
     }
