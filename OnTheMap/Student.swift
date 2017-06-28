@@ -25,15 +25,16 @@ struct Student {
 
     
     init(dictionary: [String : Any]) {
-        firstName = dictionary["firstName"] as! String!
-        lastName = dictionary["lastName"] as! String!
-        longitude = dictionary["longitude"] as! Double
-        latitude = dictionary["latitude"] as! Double
-        mediaUrl = dictionary["mediaURL"] as! String!
-        mapString = dictionary["mapString"] as! String!
-        objectId = dictionary["objectId"] as! String!
-        uniqueKey = dictionary["uniqueKey"] as! String!
+        firstName = (dictionary["firstName"] ?? "") as! String
+        lastName = (dictionary["lastName"] ?? "") as! String
+        longitude = (dictionary["longitude"] ?? 0) as! Double
+        latitude = (dictionary["latitude"] ?? 0) as! Double
+        mediaUrl = (dictionary["mediaURL"] ?? "") as! String
+        mapString = (dictionary["mapString"] ?? "") as! String
+        objectId = (dictionary["objectId"] ?? "") as! String
+        uniqueKey = (dictionary["uniqueKey"] ?? "") as! String
     }
+    
     
 }
 
